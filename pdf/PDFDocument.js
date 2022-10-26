@@ -1,7 +1,7 @@
 import React from 'react';
 import { Document, Page, Text, View, StyleSheet, Line } from '@react-pdf/renderer';
-import { SampleBarChart } from './charts/convert/SampleChart';
-import { ChartSvg } from './charts/convert/Chart';
+import BarChartPDF from './charts/BarChart';
+import { ChartSvg } from './charts/convert/WrapperChart';
 import TablePDF from './table/TablePDF';
 
 const styles = StyleSheet.create({
@@ -54,7 +54,7 @@ const PDFDocument = ({ table, chart, chartTitle }) => {
                 <View style={styles.section}>
                     <View>
                         <ChartSvg width={600} height={200}>
-                            <SampleBarChart data={chart} title={chartTitle} />
+                            <BarChartPDF data={chart} />
                         </ChartSvg>
                     </View>
                     <View style={styles.conv}>
